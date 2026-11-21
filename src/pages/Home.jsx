@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowRight, Dog, Heart, Sparkles, ShieldCheck } from 'lucide-react'
 import DoorIntro from '../components/DoorIntro.jsx'
+import RetrieverCompanion from '../components/RetrieverCompanion.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
 import ProductCard from '../components/ProductCard.jsx'
 import { products } from '../data/catalog.js'
@@ -38,8 +39,9 @@ export default function Home() {
   return (
     <>
       {!introDone && <DoorIntro onFinish={() => setIntroDone(true)} />}
+      {introDone && <RetrieverCompanion />}
 
-      <section className="relative overflow-hidden bg-brand-navy text-white">
+      <section id="hero" className="relative overflow-hidden bg-brand-navy text-white">
         <div className="pointer-events-none absolute -left-40 -top-40 h-96 w-96 rounded-full bg-brand-blue/40 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-40 right-0 h-96 w-96 rounded-full bg-brand-cyan/20 blur-3xl" />
         <div className="page-shell relative grid items-center gap-14 py-20 lg:grid-cols-2 lg:py-28">
@@ -74,7 +76,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="page-shell py-20 sm:py-24">
+      <section id="featured" className="page-shell py-20 sm:py-24">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeading
             eyebrow="First look"
@@ -93,7 +95,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-white py-20 sm:py-24">
+      <section id="brand" className="bg-white py-20 sm:py-24">
         <div className="page-shell">
           <SectionHeading eyebrow="Who we are" title="Made for the moments you're not there" align="center">
             Our brand is playful, premium, modern, friendly and trustworthy — a little adventure

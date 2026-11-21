@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     viewBox="0 0 600 580" width="600" height="580"
+     role="img" aria-labelledby="hwa-title">
+  <title id="hwa-title">Happy While Away golden retriever – curious head tilt</title>
+  <desc>Happy While Away golden retriever puppy. Transparent background. Animatable groups carry
+    id, class, data-anim and data-origin. Origins are in each group's local user units.</desc>
+  <defs>
+    <linearGradient id="hwa-fur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F8C76B"/>
+      <stop offset="0.6" stop-color="#EFAE4C"/>
+      <stop offset="1" stop-color="#E0993A"/>
+    </linearGradient>
+    <linearGradient id="hwa-fur-dark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E29A3A"/>
+      <stop offset="1" stop-color="#C97A26"/>
+    </linearGradient>
+    <linearGradient id="hwa-cream" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFF6E3"/>
+      <stop offset="1" stop-color="#FBE2B2"/>
+    </linearGradient>
+    <radialGradient id="hwa-iris" cx="0.45" cy="0.4" r="0.6">
+      <stop offset="0" stop-color="#A2622E"/>
+      <stop offset="1" stop-color="#4A2513"/>
+    </radialGradient>
+    <linearGradient id="hwa-nose" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#55352A"/>
+      <stop offset="1" stop-color="#1E120D"/>
+    </linearGradient>
+    <linearGradient id="hwa-tongue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F8A3B0"/>
+      <stop offset="1" stop-color="#E06F80"/>
+    </linearGradient>
+    <clipPath id="hwa-eye-clip-left"><ellipse cx="-40" cy="-8" rx="22" ry="24"/></clipPath>
+    <clipPath id="hwa-eye-clip-right"><ellipse cx="40" cy="-8" rx="22" ry="24"/></clipPath>
+  </defs>
+  <g id="dog" class="hwa-dog" inkscape:label="dog (root)" data-anim="bounce (translateY -12px), enter" data-origin="300 540" style="transform-box:view-box;transform-origin:300px 540px">
+    <g id="shadow" class="hwa-shadow" inkscape:label="ground shadow (optional)">
+      <ellipse cx="300" cy="540" rx="170" ry="14" fill="#12243A" opacity="0.13"/>
+    </g>
+        <g id="tail" class="hwa-tail" inkscape:label="tail" data-anim="wag (rotate -10deg to 12deg)" data-origin="392 488" style="transform-box:view-box;transform-origin:392px 488px">
+          <path d="M 384 500 C 436 512 482 500 502 462 C 510 444 508 424 496 418 C 490 416 486 422 486 430 C 484 452 452 472 404 474 Z" fill="url(#hwa-fur)" stroke="#A8611F" stroke-width="2.5" stroke-linejoin="round"/>
+        </g>
+        <g id="body" class="hwa-body" inkscape:label="body + chest" data-anim="breathe (scale 1 -> 1.02)" data-origin="300 524" style="transform-box:view-box;transform-origin:300px 524px">
+          <path d="M 300 232 C 366 232 398 300 404 372 C 410 446 394 506 362 524 L 238 524 C 206 506 190 446 196 372 C 202 300 234 232 300 232 Z" fill="url(#hwa-fur)" stroke="#A8611F" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M 300 280 C 344 280 362 316 356 356 C 352 388 336 412 318 420 L 312 432 L 302 420 L 292 434 L 286 420 C 264 412 248 388 244 356 C 238 316 256 280 300 280 Z" fill="url(#hwa-cream)" stroke="#A8611F" stroke-width="2.5" stroke-linejoin="round"/>
+        </g>
+        <g id="back-legs" class="hwa-back-legs" inkscape:label="back legs (haunches)" data-anim="settle / push-off" data-origin="300 527" style="transform-box:view-box;transform-origin:300px 527px">
+          <ellipse cx="228" cy="462" rx="56" ry="56" fill="url(#hwa-fur)" stroke="#A8611F" stroke-width="2.5" stroke-linejoin="round"/>
+          <ellipse cx="372" cy="462" rx="56" ry="56" fill="url(#hwa-fur)" stroke="#A8611F" stroke-width="2.5" stroke-linejoin="round"/>
+          <ellipse cx="196" cy="527" rx="38" ry="16" fill="#FBDDA0" stroke="#A8611F" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M 183.333 524.6 v 12 M 208.667 524.6 v 12" fill="none" stroke="#A8611F" stroke-width="2" stroke-linecap="round"/>
+          <ellipse cx="404" cy="527" rx="38" ry="16" fill="#FBDDA0" stroke="#A8611F" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M 391.333 524.6 v 12 M 416.667 524.6 v 12" fill="none" stroke="#A8611F" stroke-width="2" stroke-linecap="round"/>
+        </g>
+        <g id="front-legs" class="hwa-front-legs" inkscape:label="front legs" data-anim="paw lift (rotate on one leg)" data-origin="300 380" style="transform-box:view-box;transform-origin:300px 380px">
+          <g id="front-leg-left" class="hwa-front-leg-left" data-origin="272 380" style="transform-box:view-box;transform-origin:272px 380px">
+            <path d="M 250 520 C 247 480 248 400 253 386 C 259 374 285 374 291 386 C 296 400 297 480 294 520 Z" fill="url(#hwa-fur)" stroke="#A8611F" stroke-width="2.5" stroke-linejoin="round"/>
+            <ellipse cx="270" cy="524" rx="30" ry="16" fill="#FBDDA0" stroke="#A8611F" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M 260 521.6 v 12 M 280 521.6 v 12" fill="none" stroke="#A8611F" stroke-width="2" stroke-linecap="round"/>
+          </g>
+          <g id="front-leg-right" class="hwa-front-leg-right" data-origin="328 380" style="transform-box:view-box;transform-origin:328px 380px">
+            <path d="M 306 520 C 303 480 304 400 309 386 C 315 374 341 374 347 386 C 352 400 353 480 350 520 Z" fill="url(#hwa-fur)" stroke="#A8611F" stroke-width="2.5" stroke-linejoin="round"/>
+            <ellipse cx="330" cy="524" rx="30" ry="16" fill="#FBDDA0" stroke="#A8611F" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M 320 521.6 v 12 M 340 521.6 v 12" fill="none" stroke="#A8611F" stroke-width="2" stroke-linecap="round"/>
+          </g>
+        </g>
+    <g id="head-rig" class="hwa-head-rig" inkscape:label="head rig (position / pose)" transform="translate(300 195) rotate(-14 0 80)">
+      <g id="head" class="hwa-head" inkscape:label="head" data-anim="tilt (rotate ±12deg), nod" data-origin="0 80" style="transform-box:view-box;transform-origin:0px 80px">
+        <g id="skull" class="hwa-skull" inkscape:label="skull + muzzle (static)">
+          <path d="M -16 -86 C -16 -102 -4 -110 2 -100 C 6 -112 20 -110 18 -96 C 24 -100 28 -94 22 -86 Z" fill="url(#hwa-fur)" stroke="#A8611F" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M 0 -90 C 60 -90 100 -54 102 -4 C 103 22 98 44 88 58 L 102 66 L 84 72 L 92 84 L 70 82 C 52 92 26 96 0 96 C -26 96 -52 92 -70 82 L -92 84 L -84 72 L -102 66 L -88 58 C -98 44 -103 22 -102 -4 C -100 -54 -60 -90 0 -90 Z" fill="url(#hwa-fur)" stroke="#A8611F" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M 0 -72 C 32 -72 72 -42 76 0 C 78 30 50 40 0 40 C -50 40 -78 30 -76 0 C -72 -42 -32 -72 0 -72 Z" fill="#FAD58A" opacity="0.55"/>
+          <path d="M -54 44 C -56 16 -30 4 0 8 C 30 4 56 16 54 44 C 52 72 28 90 0 90 C -28 90 -52 72 -54 44 Z" fill="url(#hwa-cream)"/>
+        </g>
+        <g id="ear-left-rig" class="hwa-ear-left-rig" inkscape:label="ear left rig (pose)" transform="rotate(16 -58 -64)">
+          <g id="ear-left" class="hwa-ear-left" inkscape:label="ear left" data-anim="flop (rotate ±8deg)" data-origin="-58 -64" style="transform-box:view-box;transform-origin:-58px -64px">
+            <path d="M -52 -68 C -86 -84 -126 -62 -134 -20 C -140 16 -130 56 -108 66 C -96 72 -90 64 -86 50 C -82 30 -86 4 -80 -22 C -76 -38 -70 -50 -62 -58 Z" fill="url(#hwa-fur-dark)" stroke="#A8611F" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M -104 -40 C -120 -14 -122 26 -110 54 C -104 32 -102 2 -96 -22 Z" fill="#B96B1F" opacity="0.22"/>
+          </g>
+        </g>
+        <g id="ear-right-rig" class="hwa-ear-right-rig" inkscape:label="ear right rig (pose)" transform="rotate(-4 58 -64)">
+          <g id="ear-right" class="hwa-ear-right" inkscape:label="ear right" data-anim="flop (rotate ±8deg)" data-origin="58 -64" style="transform-box:view-box;transform-origin:58px -64px">
+            <path d="M 52 -68 C 86 -84 126 -62 134 -20 C 140 16 130 56 108 66 C 96 72 90 64 86 50 C 82 30 86 4 80 -22 C 76 -38 70 -50 62 -58 Z" fill="url(#hwa-fur-dark)" stroke="#A8611F" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M 104 -40 C 120 -14 122 26 110 54 C 104 32 102 2 96 -22 Z" fill="#B96B1F" opacity="0.22"/>
+          </g>
+        </g>
+        <g id="blush" class="hwa-blush" inkscape:label="cheek blush">
+          <ellipse cx="-66" cy="34" rx="13" ry="8" fill="#F59E86" opacity="0.4"/>
+          <ellipse cx="66" cy="34" rx="13" ry="8" fill="#F59E86" opacity="0.4"/>
+        </g>
+        <g id="eye-left" class="hwa-eye-left" inkscape:label="eye left" data-anim="blink (scaleY 1 -> 0.1 -> 1)" data-origin="-40 -8" style="transform-box:view-box;transform-origin:-40px -8px">
+          <ellipse cx="-40" cy="-8" rx="22" ry="24" fill="#FFFDF6"/>
+          <g clip-path="url(#hwa-eye-clip-left)">
+          <g id="pupil-left-rig" class="hwa-pupil-left-rig" inkscape:label="pupil left rig (pose offset)" transform="translate(-2 -4)">
+            <g id="pupil-left" class="hwa-pupil-left" inkscape:label="pupil left" data-anim="look (translate, max ±5px)" data-origin="-40 -8" style="transform-box:view-box;transform-origin:-40px -8px">
+              <circle cx="-40" cy="-8" r="17" fill="url(#hwa-iris)"/>
+              <circle cx="-40" cy="-8" r="10" fill="#1A0E08"/>
+              <circle cx="-33" cy="-16" r="6.5" fill="#FFFFFF"/>
+              <circle cx="-46" cy="-1" r="3" fill="#FFFFFF" opacity="0.85"/>
+            </g>
+          </g>
+          </g>
+          <ellipse cx="-40" cy="-8" rx="22" ry="24" fill="none" stroke="#3B2216" stroke-width="2.6"/>
+        </g>
+        <g id="eye-right" class="hwa-eye-right" inkscape:label="eye right" data-anim="blink (scaleY 1 -> 0.1 -> 1)" data-origin="40 -8" style="transform-box:view-box;transform-origin:40px -8px">
+          <ellipse cx="40" cy="-8" rx="22" ry="24" fill="#FFFDF6"/>
+          <g clip-path="url(#hwa-eye-clip-right)">
+          <g id="pupil-right-rig" class="hwa-pupil-right-rig" inkscape:label="pupil right rig (pose offset)" transform="translate(-2 -4)">
+            <g id="pupil-right" class="hwa-pupil-right" inkscape:label="pupil right" data-anim="look (translate, max ±5px)" data-origin="40 -8" style="transform-box:view-box;transform-origin:40px -8px">
+              <circle cx="40" cy="-8" r="17" fill="url(#hwa-iris)"/>
+              <circle cx="40" cy="-8" r="10" fill="#1A0E08"/>
+              <circle cx="47" cy="-16" r="6.5" fill="#FFFFFF"/>
+              <circle cx="34" cy="-1" r="3" fill="#FFFFFF" opacity="0.85"/>
+            </g>
+          </g>
+          </g>
+          <ellipse cx="40" cy="-8" rx="22" ry="24" fill="none" stroke="#3B2216" stroke-width="2.6"/>
+        </g>
+        <g id="brow-left-rig" class="hwa-brow-left-rig" inkscape:label="brow left rig (pose)" transform="translate(0 -6)">
+          <g id="brow-left" class="hwa-brow-left" inkscape:label="brow left" data-anim="raise (translateY -6px)" data-origin="-42 -44" style="transform-box:view-box;transform-origin:-42px -44px">
+            <ellipse cx="-42" cy="-44" rx="10" ry="4.5" transform="rotate(-12 -42 -44)" fill="#D98A2E"/>
+          </g>
+        </g>
+        <g id="brow-right-rig" class="hwa-brow-right-rig" inkscape:label="brow right rig (pose)">
+          <g id="brow-right" class="hwa-brow-right" inkscape:label="brow right" data-anim="raise (translateY -6px)" data-origin="42 -44" style="transform-box:view-box;transform-origin:42px -44px">
+            <ellipse cx="42" cy="-44" rx="10" ry="4.5" transform="rotate(12 42 -44)" fill="#D98A2E"/>
+          </g>
+        </g>
+        <g id="nose" class="hwa-nose" inkscape:label="nose" data-anim="sniff (scale 1 -> 1.08)" data-origin="0 30" style="transform-box:view-box;transform-origin:0px 30px">
+          <path d="M -18 26 C -18 15 18 15 18 26 C 18 36 7 44 0 44 C -7 44 -18 36 -18 26 Z" fill="url(#hwa-nose)"/>
+          <ellipse cx="-6" cy="22" rx="6" ry="3" fill="#FFFFFF" opacity="0.45"/>
+        </g>
+        <g id="mouth" class="hwa-mouth" inkscape:label="mouth (curious)" data-anim="pant / talk (scaleY 0.9 -> 1.1)" data-origin="0 50" style="transform-box:view-box;transform-origin:0px 50px">
+          <path d="M 0 44 V 52 M -20 52 C -13 58 -5 58 0 52 C 5 58 13 58 20 52" fill="none" stroke="#3B2216" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <ellipse cx="0" cy="64" rx="6" ry="5" fill="#6B2B22"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
