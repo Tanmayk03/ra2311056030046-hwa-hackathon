@@ -1,0 +1,16 @@
+/* Design tokens — the brand palette lives here and is consumed by Tailwind. */
+:root {
+  --color-primary: 23 109 185; /* #176DB9 */
+  --color-light: 196 232 252; /* #C4E8FC */
+  --color-cyan: 8 191 215; /* #08BFD7 */
+  --color-pale: 235 248 252; /* #EBF8FC */
+  --color-navy: 18 36 58; /* #12243A */
+  --color-white: 255 255 255; /* #FFFFFF */
+
+  --motion-fast: 180ms;
+  --motion-base: 420ms;
+  --motion-slow: 900ms;
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --page-max: 1200px;
+}

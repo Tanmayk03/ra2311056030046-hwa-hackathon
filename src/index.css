@@ -1,0 +1,66 @@
+@import './styles/tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-brand-pale text-brand-navy antialiased;
+  }
+
+  :focus-visible {
+    outline: 3px solid rgb(var(--color-cyan));
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: rgb(var(--color-light));
+    color: rgb(var(--color-navy));
+  }
+}
+
+@layer components {
+  .page-shell {
+    @apply mx-auto w-full max-w-[var(--page-max)] px-5 sm:px-8 lg:px-10;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-blue px-7 py-3.5 font-display text-base font-bold text-white shadow-soft transition duration-300 hover:-translate-y-0.5 hover:bg-brand-navy active:translate-y-0;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-brand-blue px-6 py-3 font-display text-base font-bold text-brand-blue transition duration-300 hover:bg-brand-blue hover:text-white;
+  }
+
+  .eyebrow {
+    @apply text-xs font-extrabold uppercase tracking-[0.22em] text-brand-cyan;
+  }
+
+  .section-title {
+    @apply font-display text-3xl font-extrabold leading-tight text-brand-navy sm:text-4xl lg:text-5xl;
+  }
+
+  .card-surface {
+    @apply rounded-4xl border border-brand-light/70 bg-white shadow-soft;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
