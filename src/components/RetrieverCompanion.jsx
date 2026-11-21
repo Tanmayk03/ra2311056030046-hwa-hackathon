@@ -23,10 +23,12 @@ export default function RetrieverCompanion() {
   const wagTimer = useRef(null)
   const tiltTimer = useRef(null)
   const lookTimer = useRef(null)
+  const bubbleTimer = useRef(null)
   const [phase, setPhase] = useState(reduced ? 'arrived' : 'entering')
   const [sectionPose, setSectionPose] = useState('sitting')
   const [wagging, setWagging] = useState(false)
   const [tilting, setTilting] = useState(false)
+  const [bubble, setBubble] = useState(false)
 
   const pose = tilting ? 'headTilt' : phase === 'entering' ? 'standing' : sectionPose
   const markup = useMemo(() => clean(poses[pose]), [pose])
@@ -52,6 +54,7 @@ export default function RetrieverCompanion() {
       window.clearTimeout(wagTimer.current)
       window.clearTimeout(tiltTimer.current)
       window.clearTimeout(lookTimer.current)
+      window.clearTimeout(bubbleTimer.current)
     }
   }, [reduced, triggerWag])
 
@@ -125,6 +128,9 @@ export default function RetrieverCompanion() {
 
   function reactToTap() {
     triggerWag(1100)
+    setBubble(true)
+    window.clearTimeout(bubbleTimer.current)
+    bubbleTimer.current = window.setTimeout(() => setBubble(false), 5000)
     if (reduced) return
     window.clearTimeout(tiltTimer.current)
     setTilting(true)
@@ -137,6 +143,23 @@ export default function RetrieverCompanion() {
       className={`hwa-companion is-${phase}${wagging ? ' is-wagging' : ''}${tilting ? ' is-tilting' : ''}`}
       data-pose={pose}
     >
+      {bubble && (
+        <div className="hwa-bubble" role="status">
+          <button
+            type="button"
+            className="hwa-bubble-close"
+            onClick={(event) => {
+              event.stopPropagation()
+              window.clearTimeout(bubbleTimer.current)
+              setBubble(false)
+            }}
+            aria-label="Dismiss message"
+          >
+            ×
+          </button>
+          <p>Hello! How can I help you?</p>
+        </div>
+      )}
       <button
         type="button"
         className="hwa-figure"

@@ -17,7 +17,7 @@
   z-index: 35;
   pointer-events: none;
   transition: bottom 900ms ease, right 900ms ease;
-  contain: layout paint;
+  contain: layout;
 }
 
 .hwa-companion[data-pose='standing'] {
@@ -35,6 +35,62 @@
 .hwa-companion[data-pose='lying'] {
   --wag-a: 6deg;
   --wag-b: -6deg;
+}
+
+.hwa-bubble {
+  position: absolute;
+  bottom: 100%;
+  right: 8%;
+  z-index: 2;
+  width: max-content;
+  max-width: min(240px, 70vw);
+  margin-bottom: 14px;
+  padding: 12px 16px;
+  border: 2px solid rgb(var(--color-light));
+  border-radius: 18px 18px 18px 4px;
+  background: rgb(var(--color-white));
+  color: rgb(var(--color-navy));
+  box-shadow: 0 14px 30px -16px rgb(var(--color-navy) / 0.45);
+  pointer-events: auto;
+  animation: hwa-bubble-in 260ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hwa-bubble p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.hwa-bubble::after {
+  content: '';
+  position: absolute;
+  right: 20px;
+  bottom: -9px;
+  width: 14px;
+  height: 14px;
+  background: rgb(var(--color-white));
+  border-right: 2px solid rgb(var(--color-light));
+  border-bottom: 2px solid rgb(var(--color-light));
+  transform: rotate(45deg);
+}
+
+.hwa-bubble-close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  display: flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  background: rgb(var(--color-navy));
+  color: rgb(var(--color-white));
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
 }
 
 .hwa-figure {
@@ -199,6 +255,7 @@
 @media (prefers-reduced-motion: reduce) {
   .hwa-companion,
   .hwa-figure,
+  .hwa-bubble,
   .hwa-svg,
   .hwa-head,
   .hwa-ear-left,
