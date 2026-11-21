@@ -36,3 +36,8 @@ export const products = [
 
 export const formatPrice = (price) =>
   price == null ? 'Price to be confirmed' : `$${price.toFixed(2)}`
+
+export const getProduct = (id) => products.find((item) => item.id === id)
+
+export const categoryLabel = (id) =>
+  categories.find((category) => category.id === id)?.label ?? 'Uncategorised'
