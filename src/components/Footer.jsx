@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { PawPrint } from 'lucide-react'
 
 const footerLinks = [
   { to: '/shop', label: 'Shop' },
@@ -14,10 +13,7 @@ export default function Footer() {
     <footer className="mt-24 bg-brand-navy text-white">
       <div className="page-shell grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-3">
         <div>
-          <div className="flex items-center gap-2 font-display text-2xl font-extrabold">
-            <PawPrint aria-hidden="true" className="text-brand-cyan" />
-            Happy While Away
-          </div>
+          <img src="/logo.png" alt="Happy While Away" className="h-auto w-56" />
           <p className="mt-3 max-w-sm text-brand-light/90">
             A little adventure while you&apos;re away. Premium dog enrichment for curious companions.
           </p>

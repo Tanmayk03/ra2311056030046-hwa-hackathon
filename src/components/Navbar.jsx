@@ -32,10 +32,14 @@ export default function Navbar() {
       <div className="page-shell flex h-20 items-center justify-between gap-4 py-3">
         <Link
           to="/"
-          className="font-display text-xl font-extrabold tracking-tight text-brand-navy sm:text-2xl"
+          className="inline-flex items-center rounded-2xl bg-brand-pale px-3 py-1.5"
           aria-label="Happy While Away home"
         >
-          Happy While <span className="text-brand-blue">Away</span>
+          <img
+            src="/logo.png"
+            alt="Happy While Away"
+            className="h-auto w-[120px] sm:w-[140px]"
+          />
         </Link>
 
         <nav aria-label="Main navigation" className="hidden items-center gap-1 md:flex">
