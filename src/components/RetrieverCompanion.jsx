@@ -14,7 +14,7 @@ const clamp = (value, min, max) => Math.min(max, Math.max(min, value))
 const SECTION_POSES = [
   { id: 'hero', pose: 'sitting' },
   { id: 'away', pose: 'headTilt' },
-  { id: 'featured', pose: 'standing' },
+  { id: 'products', pose: 'standing' },
   { id: 'brand', pose: 'playful' },
 ]
 

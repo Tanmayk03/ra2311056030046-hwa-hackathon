@@ -5,9 +5,8 @@ import { ArrowRight, Dog, Heart, Sparkles, ShieldCheck } from 'lucide-react'
 import DoorIntro from '../components/DoorIntro.jsx'
 import RetrieverCompanion from '../components/RetrieverCompanion.jsx'
 import AwayBehaviours from '../components/AwayBehaviours.jsx'
+import ProductFamily from '../components/ProductFamily.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
-import ProductCard from '../components/ProductCard.jsx'
-import { products } from '../data/catalog.js'
 
 const values = [
   {
@@ -79,24 +78,7 @@ export default function Home() {
 
       <AwayBehaviours />
 
-      <section id="featured" className="page-shell py-20 sm:py-24">
-        <div className="flex flex-wrap items-end justify-between gap-6">
-          <SectionHeading
-            eyebrow="First look"
-            title="A peek at the collection"
-          >
-            Every item below is a placeholder until the real range and pricing are confirmed.
-          </SectionHeading>
-          <Link to="/shop" className="btn-ghost">
-            Shop all
-          </Link>
-        </div>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {products.slice(0, 3).map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      </section>
+      <ProductFamily />
 
       <section id="brand" className="bg-white py-20 sm:py-24">
         <div className="page-shell">
