@@ -7,6 +7,6 @@ init (*).py
 submit.py
 hwa-start.*
 .DS_Store
-src/assets/
+src/assets/HWA_*/
 dist/
 .vercel
