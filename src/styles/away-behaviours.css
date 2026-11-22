@@ -1,0 +1,249 @@
+/* Interactive retriever poses for the "What Happens When You're Away?" section.
+   The SVGs keep their own rig classes; these rules only add card-level motion. */
+
+.hwa-card {
+  --wag-a: 16deg;
+  --wag-b: -13deg;
+
+  position: relative;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgb(var(--color-light));
+  border-radius: 2rem;
+  background: rgb(var(--color-white));
+  padding: 0.85rem;
+  text-align: left;
+  box-shadow: 0 18px 50px -32px rgb(var(--color-navy) / 0.4);
+  transition:
+    transform 380ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 380ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 380ms ease;
+}
+
+.hwa-card:hover,
+.hwa-card:focus-visible,
+.hwa-card.is-active {
+  transform: translateY(-8px);
+  border-color: rgb(var(--color-blue));
+  box-shadow: 0 30px 60px -28px rgb(var(--color-navy) / 0.45);
+}
+
+.hwa-card[data-behaviour='playing'] {
+  --wag-a: 22deg;
+  --wag-b: -18deg;
+}
+
+.hwa-card[data-behaviour='resting'] {
+  --wag-a: 6deg;
+  --wag-b: -5deg;
+}
+
+.hwa-card__art {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 1.4rem;
+  background: linear-gradient(155deg, rgb(var(--color-pale)), rgb(var(--color-light)));
+}
+
+.hwa-card__art::before {
+  content: '';
+  position: absolute;
+  top: -2.5rem;
+  right: -2rem;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 999px;
+  background: rgb(var(--color-white) / 0.65);
+  filter: blur(4px);
+}
+
+.hwa-card__art::after {
+  content: '';
+  position: absolute;
+  bottom: -2.5rem;
+  left: -2rem;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 999px;
+  background: rgb(var(--color-cyan) / 0.16);
+  filter: blur(6px);
+}
+
+.hwa-card__number {
+  position: absolute;
+  top: 0.65rem;
+  left: 0.65rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0 0.4rem;
+  border-radius: 999px;
+  background: rgb(var(--color-white) / 0.9);
+  color: rgb(var(--color-blue));
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.hwa-card__svg {
+  position: absolute;
+  inset: 0.35rem 0.35rem 0;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hwa-card:hover .hwa-card__svg,
+.hwa-card:focus-visible .hwa-card__svg,
+.hwa-card.is-active .hwa-card__svg {
+  transform: translateY(-5px) scale(1.035);
+}
+
+.hwa-card__svg svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.hwa-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.1rem 0.55rem 0.55rem;
+}
+
+.hwa-card__title {
+  font-family: var(--font-display, 'Baloo 2'), 'Avenir Next', 'Segoe UI', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: rgb(var(--color-navy));
+}
+
+.hwa-card__copy {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: rgb(var(--color-navy) / 0.72);
+}
+
+.hwa-card__hint {
+  margin-top: auto;
+  padding-top: 1rem;
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgb(var(--color-blue));
+}
+
+/* Idle life in every pose. */
+.hwa-card .hwa-body {
+  animation: hwa-breathe 3.8s ease-in-out infinite;
+}
+
+.hwa-card .hwa-eye-left {
+  animation: hwa-blink-left 5.4s infinite;
+}
+
+.hwa-card .hwa-eye-right {
+  animation: hwa-blink-right 6.2s infinite 0.3s;
+}
+
+/* Short reactions on hover, keyboard focus and mobile tap. */
+.hwa-card:hover .hwa-tail,
+.hwa-card:focus-visible .hwa-tail,
+.hwa-card.is-active .hwa-tail {
+  animation: hwa-wag 800ms ease-in-out;
+}
+
+.hwa-card:hover .hwa-dog,
+.hwa-card:focus-visible .hwa-dog,
+.hwa-card.is-active .hwa-dog {
+  animation: hwa-bounce 700ms ease;
+}
+
+.hwa-card[data-behaviour='resting']:hover .hwa-dog,
+.hwa-card[data-behaviour='resting']:focus-visible .hwa-dog,
+.hwa-card[data-behaviour='resting'].is-active .hwa-dog {
+  animation: none;
+}
+
+.hwa-card[data-behaviour='searching']:hover .hwa-head,
+.hwa-card[data-behaviour='searching']:focus-visible .hwa-head,
+.hwa-card[data-behaviour='searching'].is-active .hwa-head,
+.hwa-card[data-behaviour='observing']:hover .hwa-head,
+.hwa-card[data-behaviour='observing']:focus-visible .hwa-head,
+.hwa-card[data-behaviour='observing'].is-active .hwa-head {
+  animation: hwa-curious-tilt 900ms ease;
+}
+
+.hwa-card[data-behaviour='searching']:hover .hwa-nose,
+.hwa-card[data-behaviour='searching']:focus-visible .hwa-nose,
+.hwa-card[data-behaviour='searching'].is-active .hwa-nose {
+  animation: hwa-sniff 700ms ease-in-out;
+}
+
+@keyframes hwa-curious-tilt {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  35%,
+  65% {
+    transform: rotate(9deg);
+  }
+}
+
+@keyframes hwa-sniff {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.09);
+  }
+}
+
+@media (max-width: 640px) {
+  .hwa-card__art {
+    aspect-ratio: 5 / 3;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hwa-card,
+  .hwa-card:hover,
+  .hwa-card:focus-visible,
+  .hwa-card.is-active,
+  .hwa-card__svg,
+  .hwa-card:hover .hwa-card__svg,
+  .hwa-card:focus-visible .hwa-card__svg,
+  .hwa-card.is-active .hwa-card__svg,
+  .hwa-card .hwa-body,
+  .hwa-card .hwa-eye-left,
+  .hwa-card .hwa-eye-right,
+  .hwa-card .hwa-tail,
+  .hwa-card .hwa-dog,
+  .hwa-card .hwa-head,
+  .hwa-card .hwa-nose {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .hwa-card:hover,
+  .hwa-card:focus-visible,
+  .hwa-card.is-active {
+    transform: none;
+  }
+}

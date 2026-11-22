@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowRight, Dog, Heart, Sparkles, ShieldCheck } from 'lucide-react'
 import DoorIntro from '../components/DoorIntro.jsx'
 import RetrieverCompanion from '../components/RetrieverCompanion.jsx'
+import AwayBehaviours from '../components/AwayBehaviours.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
 import ProductCard from '../components/ProductCard.jsx'
 import { products } from '../data/catalog.js'
@@ -75,6 +76,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <AwayBehaviours />
 
       <section id="featured" className="page-shell py-20 sm:py-24">
         <div className="flex flex-wrap items-end justify-between gap-6">
