@@ -1,0 +1,141 @@
+/* Product slideshow inside the warm hero arch. The arch gradient, cyan
+   border and glow are applied in Home.jsx; this styles only its contents. */
+
+.hero-slideshow {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 18px 12px 12px;
+}
+
+.hero-slideshow-stage {
+  position: relative;
+  width: 100%;
+  min-height: 0;
+  flex: 1 1 auto;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 900ms ease, transform 1200ms cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.hero-slide-media {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 0;
+  flex: 1 1 auto;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 4px 8px 0;
+}
+
+.hero-slide-media img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(0 8px 10px rgb(var(--color-navy) / 0.16));
+}
+
+.hero-slide-shadow {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  width: 58%;
+  height: 12px;
+  border-radius: 50%;
+  background: rgb(var(--color-navy) / 0.2);
+  filter: blur(6px);
+  transform: translateX(-50%);
+}
+
+.hero-slide-label {
+  display: flex;
+  width: 100%;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 6px 2px;
+  color: rgb(var(--color-navy));
+  text-align: center;
+}
+
+.hero-slide-label strong {
+  font-family: Baloo 2, Avenir Next, Segoe UI, system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.hero-slide-label span {
+  color: rgb(var(--color-navy) / 0.75);
+  font-size: 0.66rem;
+  line-height: 1.25;
+}
+
+.hero-slideshow-dots {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.hero-slideshow-dots button {
+  width: 7px;
+  height: 7px;
+  border: 0;
+  border-radius: 999px;
+  background: rgb(var(--color-primary) / 0.3);
+  cursor: pointer;
+  transition: width 300ms ease, background 300ms ease;
+}
+
+.hero-slideshow-dots button.is-active {
+  width: 20px;
+  background: rgb(var(--color-primary));
+}
+
+@media (max-width: 640px) {
+  .hero-slideshow {
+    padding: 14px 10px 10px;
+  }
+
+  .hero-slide-label strong {
+    font-size: 0.85rem;
+  }
+
+  .hero-slide-label span {
+    font-size: 0.62rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide,
+  .hero-slideshow-dots button {
+    transition: none !important;
+  }
+}

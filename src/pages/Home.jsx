@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { motion, useReducedMotion } from 'framer-motion'
-import { ArrowRight, Dog, Heart, Sparkles, ShieldCheck } from 'lucide-react'
+import { ArrowRight, Heart, Sparkles, ShieldCheck } from 'lucide-react'
 import DoorIntro from '../components/DoorIntro.jsx'
 import RetrieverCompanion from '../components/RetrieverCompanion.jsx'
+import HeroProductSlideshow from '../components/HeroProductSlideshow.jsx'
 import AwayBehaviours from '../components/AwayBehaviours.jsx'
 import ProductFamily from '../components/ProductFamily.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
@@ -28,13 +28,6 @@ const values = [
 
 export default function Home() {
   const [introDone, setIntroDone] = useState(false)
-  const reduce = useReducedMotion()
-
-  const dogMotion = (delay) => ({
-    initial: { opacity: 0, y: reduce ? 0 : 60 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: reduce ? 0 : 0.9, delay: reduce ? 0 : delay, ease: 'easeOut' },
-  })
 
   return (
     <>
@@ -64,14 +57,10 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative flex min-h-72 items-end justify-center" aria-hidden="true">
-            <div className="absolute bottom-0 h-64 w-56 rounded-t-[7rem] border-4 border-brand-cyan/50 bg-gradient-to-b from-[#ffdca5] via-[#ffeecb] to-white shadow-glow sm:h-80 sm:w-72" />
-            <motion.div {...dogMotion(0.25)} className="relative z-10 -ml-16 text-brand-navy">
-              <Dog size={112} strokeWidth={1.3} className="text-white drop-shadow-lg" />
-            </motion.div>
-            <motion.div {...dogMotion(0.5)} className="relative z-10 ml-10 mb-2 text-brand-navy">
-              <Dog size={92} strokeWidth={1.3} className="text-white drop-shadow-lg" />
-            </motion.div>
+          <div className="relative flex min-h-80 items-end justify-center sm:min-h-96">
+            <div className="absolute bottom-0 h-80 w-56 overflow-hidden rounded-t-[7rem] border-4 border-brand-cyan/50 bg-gradient-to-b from-[#ffdca5] via-[#ffeecb] to-white shadow-glow sm:h-96 sm:w-72">
+              <HeroProductSlideshow />
+            </div>
           </div>
         </div>
       </section>
