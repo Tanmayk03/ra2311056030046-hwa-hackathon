@@ -95,7 +95,7 @@ export default function DoorIntro({ onFinish }) {
           opacity: opening ? 1 : 0,
           scale: opening ? 4.6 : 0.3,
         }}
-        transition={{ duration: reduce ? 0 : 1.2, ease: 'easeOut' }}
+        transition={{ duration: reduce ? 0 : 0.9, delay: reduce ? 0 : 0.55, ease: 'easeOut' }}
       />
 
       <motion.div className="door-panel door-panel-left" {...doorMotion('left')}>
@@ -143,8 +143,8 @@ export default function DoorIntro({ onFinish }) {
 
       <motion.div
         className="door-content"
-        animate={{ opacity: fading ? 0 : 1, y: opening ? -24 : 0 }}
-        transition={{ duration: reduce ? 0.15 : 0.4 }}
+        animate={{ opacity: fading ? 0 : 1, y: fading ? -16 : 0 }}
+        transition={{ duration: reduce ? 0.15 : 0.5 }}
       >
         <p className="eyebrow text-brand-light">Welcome to</p>
         <h1 className="mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-6xl">

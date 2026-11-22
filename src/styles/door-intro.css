@@ -259,6 +259,11 @@
   text-align: center;
 }
 
+.door-content h1,
+.door-content p {
+  text-shadow: 0 2px 14px rgba(18, 36, 58, 0.6), 0 1px 3px rgba(18, 36, 58, 0.45);
+}
+
 @media (max-width: 640px) {
   .door-inset {
     inset: 5%;
