@@ -26,7 +26,7 @@ const questions = [
   {
     question: 'Why is there a golden retriever on the homepage?',
     answer:
-      'The dog is a playful companion that appears after the door opens. You can move your pointer or finger to get its attention, tap it for a greeting, and watch its pose change as you scroll.',
+      'The dog is a playful companion that appears after the door opens. You can move your pointer or finger to get its attention, tap it to open the help chat, and watch its pose change as you scroll.',
   },
   {
     question: 'Is the site accessible?',

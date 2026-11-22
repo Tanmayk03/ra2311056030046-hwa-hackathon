@@ -5,6 +5,7 @@ import standing from '../assets/retriever/golden-retriever-standing-wag.svg?raw'
 import headTilt from '../assets/retriever/golden-retriever-head-tilt.svg?raw'
 import lying from '../assets/retriever/golden-retriever-lying.svg?raw'
 import playful from '../assets/retriever/golden-retriever-playful.svg?raw'
+import DogChat from './DogChat.jsx'
 import '../styles/retriever.css'
 
 const poses = { sitting, standing, headTilt, lying, playful }
@@ -24,12 +25,12 @@ export default function RetrieverCompanion() {
   const wagTimer = useRef(null)
   const tiltTimer = useRef(null)
   const lookTimer = useRef(null)
-  const bubbleTimer = useRef(null)
+  const chatButtonRef = useRef(null)
   const [phase, setPhase] = useState(reduced ? 'arrived' : 'entering')
   const [sectionPose, setSectionPose] = useState('sitting')
   const [wagging, setWagging] = useState(false)
   const [tilting, setTilting] = useState(false)
-  const [bubble, setBubble] = useState(false)
+  const [chatOpen, setChatOpen] = useState(false)
 
   const pose = tilting ? 'headTilt' : phase === 'entering' ? 'standing' : sectionPose
   const markup = useMemo(() => clean(poses[pose]), [pose])
@@ -39,6 +40,8 @@ export default function RetrieverCompanion() {
     setWagging(true)
     wagTimer.current = window.setTimeout(() => setWagging(false), duration)
   }, [])
+
+  const closeChat = useCallback(() => setChatOpen(false), [])
 
   useEffect(() => {
     if (reduced) return undefined
@@ -55,7 +58,6 @@ export default function RetrieverCompanion() {
       window.clearTimeout(wagTimer.current)
       window.clearTimeout(tiltTimer.current)
       window.clearTimeout(lookTimer.current)
-      window.clearTimeout(bubbleTimer.current)
     }
   }, [reduced, triggerWag])
 
@@ -129,9 +131,7 @@ export default function RetrieverCompanion() {
 
   function reactToTap() {
     triggerWag(1100)
-    setBubble(true)
-    window.clearTimeout(bubbleTimer.current)
-    bubbleTimer.current = window.setTimeout(() => setBubble(false), 5000)
+    setChatOpen((current) => !current)
     if (reduced) return
     window.clearTimeout(tiltTimer.current)
     setTilting(true)
@@ -144,29 +144,15 @@ export default function RetrieverCompanion() {
       className={`hwa-companion is-${phase}${wagging ? ' is-wagging' : ''}${tilting ? ' is-tilting' : ''}`}
       data-pose={pose}
     >
-      {bubble && (
-        <div className="hwa-bubble" role="status">
-          <button
-            type="button"
-            className="hwa-bubble-close"
-            onClick={(event) => {
-              event.stopPropagation()
-              window.clearTimeout(bubbleTimer.current)
-              setBubble(false)
-            }}
-            aria-label="Dismiss message"
-          >
-            ×
-          </button>
-          <p>Hello! How can I help you?</p>
-        </div>
-      )}
+      <DogChat open={chatOpen} onClose={closeChat} returnFocusRef={chatButtonRef} />
       <button
+        ref={chatButtonRef}
         type="button"
         className="hwa-figure"
         onClick={reactToTap}
         onPointerEnter={() => phase === 'arrived' && triggerWag(650)}
-        aria-label="Say hello to the Happy While Away retriever"
+        aria-label="Chat with the Happy While Away retriever"
+        aria-expanded={chatOpen}
       >
         <span key={pose} className="hwa-svg" dangerouslySetInnerHTML={{ __html: markup }} />
       </button>
