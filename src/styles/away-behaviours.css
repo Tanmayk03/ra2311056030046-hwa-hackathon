@@ -137,16 +137,6 @@
   color: rgb(var(--color-navy) / 0.72);
 }
 
-.hwa-card__hint {
-  margin-top: auto;
-  padding-top: 1rem;
-  font-size: 0.65rem;
-  font-weight: 900;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgb(var(--color-blue));
-}
-
 /* Idle life in every pose. */
 .hwa-card .hwa-body {
   animation: hwa-breathe 3.8s ease-in-out infinite;

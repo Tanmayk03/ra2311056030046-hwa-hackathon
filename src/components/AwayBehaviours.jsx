@@ -70,7 +70,6 @@ function BehaviourCard({ behaviour, index }) {
       <span className="hwa-card__body">
         <span className="hwa-card__title">{behaviour.title}</span>
         <span className="hwa-card__copy">{behaviour.copy}</span>
-        <span className="hwa-card__hint">Hover or tap to say hello</span>
       </span>
     </button>
   )
